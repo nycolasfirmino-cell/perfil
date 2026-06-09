@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="port.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <title>Portfolio</title>
+
+    <style>
+        /* CSS customizado para corrigir o tamanho gigante e ajustar a exibição */
+        .cabecalho {
+            background-color: transparent;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
+            background-attachment: fixed;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        /* Corrigindo a navbar para sumir com o fundo preto padrão caso use classes escuras */
+        .navbar-nav .nav-link {
+            color: #000080 !important;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link.active {
+            color: #555 !important;
+        }
+
+        h1 {
+            color: #0056b3;
+            font-weight: 500;
+        }
+
+        /* --- CONFIGURAÇÃO DO TAMANHO DO CARROSSEL --- */
+        .swiper-container-wrapper {
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .swiper {
+            width: 100%;
+            height: auto;
+            padding-bottom: 50px; /* Espaço para os pontinhos de paginação não cobrirem a imagem */
+            overflow: visible /* Permite ver as imagens que estão "atrás" nas laterais */
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border-radius: 18px;
+        }
+
+        /* Define as dimensões exatas e a estética do card/imagem */
+        .swiper-slide img {
+            width: 100%;         /* Largura controlada idêntica ao mockup */
+            height: 400px;        /* Altura proporcional para simular o celular/folha */
+            object-fit: contain;  /* Impede a imagem de distorcer ou cortar */
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Estilização personalizada das setas do Swiper */
+        .swiper-button-next, .swiper-button-prev {
+            color: #007bff;
+            top: 45%;
+        }
+        /* Afasta as setas para fora do card para não atrapalhar o clique */
+        .swiper-button-next { right: 20px; }
+        .swiper-button-prev { left: 20px; }
+
+        /* Estilização dos pontinhos */
+        .swiper-pagination-bullet-active {
+            background: #007bff !important;
+        }
+
+        /* Estilo do botão voltar */
+        .button-voltar {
+            border: 1px solid #993399;
+            color: #993399;
+            background: transparent;
+            padding: 8px 30px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .button-voltar:hover {
+            background: #993399;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-3 cabecalho">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfólio</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contatos.html">Contato</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <h1 class="text-center mt-3">Portfólio</h1>
+
+        <div class="swiper-container-wrapper">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./img/Img1.png" alt="Imagem 1"></div>
+                    <div class="swiper-slide"><img src="./img/Img2.png" alt="Imagem 2"></div>
+                    <div class="swiper-slide"><img src="./img/Img3.png" alt="Imagem 3"></div>
+                    <div class="swiper-slide"><img src="./img/Img4.png" alt="Imagem 4"></div>
+                    <div class="swiper-slide"><img src="./img/Img5.png" alt="Imagem 5"></div>
+                    <div class="swiper-slide"><img src="./img/Img6.png" alt="Imagem 6"></div>
+                    <div class="swiper-slide"><img src="./img/Img7.png" alt="Imagem 7"></div>
+                    <div class="swiper-slide"><img src="./img/Img8.png" alt="Imagem 8"></div>
+                    <div class="swiper-slide"><img src="./img/Img9.png" alt="Imagem 9"></div>
+                    <div class="swiper-slide"><img src="./img/Img10.png" alt="Imagem 10"></div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="mt-2 text-center">
+            <button onclick="window.location.href='index.html'" class="btn button-voltar">
+                Voltar
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/dist/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            effect: 'cards',
+            grabCursor: true,
+            loop: true,
+            perSlideRotate: 8,       // Controla a rotação das cartas que ficam atrás
+            perSlideOffset: 14,      // Controlas o espaçamento lateral das cartas escondidas
+            cardsEffect: {
+                slideShadows: false, // Desative se preferir que as cartas de trás não fiquem excessivamente escuras
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+</html>
